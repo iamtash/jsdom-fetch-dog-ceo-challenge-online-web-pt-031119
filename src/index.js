@@ -41,6 +41,11 @@ function generateBreedLi(breed) {
 
 function activateDropdown() {
     const dropdown = document.querySelector('select#breed-dropdown')
+    const defaultNoFilterOption = document.createElement('option')
+    defaultNoFilterOption.value = "";
+    defaultNoFilterOption.innerText = 'No filter';
+    dropdown.appendChild(defaultNoFilterOption);
+    dropdown.value = "";
     
     dropdown.addEventListener('change', function(e) {
         filterBreeds(e);
