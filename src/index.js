@@ -50,10 +50,10 @@ function activateDropdown() {
 function filterBreeds(e) {
     const breedLis = document.querySelectorAll('ul#dog-breeds > li');
     breedLis.forEach(breedLi => {
-        if (breedLi.innerText[0] !== e.currentTarget.value) {
-            breedLi.style.display = 'none';
-        } else {
+        if (breedLi.innerText.startsWith(e.currentTarget.value)) {
             breedLi.style.display = 'block';
+        } else {
+            breedLi.style.display = 'none';
         }
     })
 }
